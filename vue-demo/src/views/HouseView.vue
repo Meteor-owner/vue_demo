@@ -420,7 +420,10 @@ export default {
     float: left;
     margin-right: 5px;
 }
-
+.image img{
+    height: 220px;
+    width:auto;
+}
 .data-dec {
     margin-left: 10px;
     padding-left: 10px;

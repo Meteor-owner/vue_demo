@@ -1,7 +1,7 @@
 <template>
   <header class="navbar" :class="{ shadow: hasScrolled }">
     <div class="nav-logo">
-      <a><img src="../assets/img/logo.png"></a>
+      <router-link to="/"><img src="../assets/img/logo.png"></router-link>
     </div>
     <nav>
       <ul class="nav-links">
@@ -90,13 +90,13 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
-  width: 95.7%;
+  width: 94.5%;
+  z-index: 1000;
 }
 
 .navbar.shadow {
   top: 0;
   width: 90%;
-  z-index: 1000;
   border-radius: 10px;
   top: 5px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);

@@ -1,20 +1,25 @@
 <template>
     <header>
         <div class="container">
-            <ul class="fll">
-                <router-link to="/">
-                    <li>首页</li>
-                </router-link>
-                <router-link to="/houseList">
-                    <li>租房</li>
-                </router-link>
-                <router-link to="/offer">
-                    <li>发布房源</li>
-                </router-link>
-                <router-link to="/userPage">
-                    <li>个人中心</li>
-                </router-link>
-            </ul>
+            <div class="logo">
+                <img src="../assets/img/logo.png" alt="">
+            </div>
+            <div class="nav-link">
+                <ul class="fll">
+                    <router-link to="/">
+                        <li>首页</li>
+                    </router-link>
+                    <router-link to="/houseList">
+                        <li>房源</li>
+                    </router-link>
+                    <router-link to="/offer">
+                        <li>发布房源</li>
+                    </router-link>
+                    <router-link to="/userPage">
+                        <li>个人中心</li>
+                    </router-link>
+                </ul>
+            </div>
             <div class="login">
                 <span>
                     <router-link to="" v-if="username">{{ username }}</router-link>
@@ -25,6 +30,7 @@
                 <router-link to="/register" v-else>立即注册</router-link>
             </div>
         </div>
+
     </header>
 </template>
 
@@ -49,6 +55,8 @@ export default {
     margin: 0 60% 0 0;
     width: 92%;
     align-items: center;
+    display: flex;
+    /* justify-content: space-around; */
 }
 
 header {
@@ -58,9 +66,19 @@ header {
     background: rgb(244, 244, 244);
 }
 
-ul {
-    margin-left: 40%;
+.logo {
+    /* border: #9e8d71 1px solid; */
+    margin: -8px 0 0 10%;
 }
+.logo img{
+    height: 70px;
+    width: auto;
+}
+.nav-link {
+    /* border: #9e8d71 1px solid; */
+    margin: -23px 0 0 25%;
+}
+
 
 li {
     list-style: none;
@@ -88,7 +106,9 @@ ul .active {
     float: right;
     font-size: 12px;
     height: 20px;
-    line-height: 57px;
+    line-height: 20px;
+    /* border: #9e8d71 1px solid; */
+    margin: -10px 0 0 20%;
 }
 
 .login .line {
@@ -117,5 +137,4 @@ ul .active {
 
 .logout {
     cursor: pointer;
-}
-</style>
+}</style>

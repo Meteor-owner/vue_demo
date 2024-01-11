@@ -187,7 +187,7 @@
 import FooterBar from '../components/FooterBar.vue'
 import MainBar from '../components/MainBar.vue'
 import axios from 'axios'
-import cookies from 'js-cookie'
+// import cookies from 'js-cookie'
 
 export default {
     components: { MainBar, FooterBar },
@@ -276,7 +276,7 @@ export default {
     },
     mounted() {
         this.getData();
-        this.houseId = cookies.get('houseId');
+        this.houseId = /* cookies.get('houseId') */ 1;
         console.log('id: ', this.houseId);
     },
 }
