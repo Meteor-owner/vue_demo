@@ -90,7 +90,7 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
-  width: 94.5%;
+  width: 95.7%;
   z-index: 1000;
 }
 
