@@ -219,7 +219,7 @@ export default {
         getData() {
             axios.get('https://yapi.pro/mock/220305/houses').then((result) => {
                 this.houseList = result.data.data;
-                console.log('id:', this.houseList[this.houseId - 1]);
+                console.log('id of house:', this.houseList[this.houseId - 1]);
                 this.houseList = this.houseList[this.houseId - 1];
             });
         },

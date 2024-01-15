@@ -64,16 +64,24 @@ header {
     box-sizing: border-box;
     z-index: 997;
     background: rgb(244, 244, 244);
+    /* position: fixed;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1000; */
 }
 
 .logo {
     /* border: #9e8d71 1px solid; */
     margin: -8px 0 0 10%;
 }
-.logo img{
+
+.logo img {
     height: 70px;
     width: auto;
 }
+
 .nav-link {
     /* border: #9e8d71 1px solid; */
     margin: -23px 0 0 25%;

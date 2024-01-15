@@ -129,6 +129,7 @@ import axios from 'axios'
 import cookies from 'js-cookie'
 
 export default {
+    inject:['houseId'],
     components: { MainBar, FooterBar },
     data() {
         return {

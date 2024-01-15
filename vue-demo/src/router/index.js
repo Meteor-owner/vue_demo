@@ -39,13 +39,11 @@ const routes = [
     path: '/userPage',
     name: 'userPage',
     component: () => import('../views/UserView.vue'),
-    children: [
-      {
-        path: '/attention',
-        name: 'attention',
-        component: () => import('../views/InfoView.vue')
-      }
-    ]
+  },
+  {
+    path: '/attention',
+    name: 'attention',
+    component: () => import('../views/InfoView.vue')
   },
   {
     path:'/offer',
