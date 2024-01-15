@@ -31,8 +31,7 @@
                         </el-menu>
                     </el-aside>
                     <el-main>
-                        <component :is="curComponent"></component>
-                        <el-table :data="tableData" border>
+                        <el-table :data="tableData" border v-if="curIndex === '2-1'">
                             <el-table-column prop="name" label="名称" width="250"></el-table-column>
                             <el-table-column prop="updatetime" label="最后操作时间" width="250"></el-table-column>
                             <el-table-column label="操作">
@@ -56,7 +55,8 @@ export default {
     components: { MainBar, FooterBar },
     data() {
         return {
-            curComponent: null
+            curComponent: null,
+            curIndex: 2-1,
         }
     },
     methods: {
