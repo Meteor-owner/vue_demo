@@ -1,7 +1,7 @@
 <template>
     <div class="container-follow">
         <div class="follow-group">
-            <h2>我的关注</h2>
+            <h2>我的租房</h2>
             <el-divider></el-divider>
             <el-container>
                 <el-main>

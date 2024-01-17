@@ -48,9 +48,12 @@ import FooterBar from '../components/FooterBar.vue'
 import MainBar from "../components/MainBar.vue"
 import InfoView from './InfoView.vue'
 import FollowView from './FollowView.vue'
+import PublishView from './PublishView.vue'
+import RentalView from './RentalView.vue'
+import BrowserView from './BrowserView.vue'
 
 export default {
-    components: { MainBar, FooterBar, InfoView, FollowView },
+    components: { MainBar, FooterBar, InfoView, FollowView, PublishView, RentalView, BrowserView },
     inject: ['reload'],
     data() {
         return {
@@ -75,7 +78,7 @@ export default {
             } else if (index === '1-3') {
                 this.curComponent = 'RentalView';
             } else if (index === '1-4') {
-                this.curComponent = 'BrowseView';
+                this.curComponent = 'BrowserView';
             } else if (index === '2-1') {
                 this.curComponent = 'InfoView';
             }
