@@ -5,7 +5,7 @@
             <div class="box2">
                 <el-container>
                     <el-aside width="230px" style="border: 1px solid #eee">
-                        <div style="background: #fff; border-radius: 10px; height: 700px;">
+                        <div class="aside">
                             <div class="head-img">
                                 <el-avatar :size="120" fit="scale-down" @error="errorHandler">
                                     <el-image :src="require('../assets/img/head-img.jpg')"></el-image>
@@ -29,11 +29,11 @@
                                 </el-submenu>
                             </el-menu>
                         </div>
-
                     </el-aside>
                     <el-main>
                         <div class="content">
                             <component :is="curComponent"></component>
+                            <!-- <info-view></info-view> -->
                         </div>
                     </el-main>
                 </el-container>
@@ -47,9 +47,10 @@
 import FooterBar from '../components/FooterBar.vue'
 import MainBar from "../components/MainBar.vue"
 import InfoView from './InfoView.vue'
+import FollowView from './FollowView.vue'
 
 export default {
-    components: { MainBar, FooterBar, InfoView },
+    components: { MainBar, FooterBar, InfoView, FollowView },
     inject: ['reload'],
     data() {
         return {
@@ -130,13 +131,21 @@ export default {
     /* border: red 1px solid; */
     display: flex;
     justify-content: space-between;
-    text-align: center
+    text-align: center;
 }
 
 .content {
-    width: 100%;
+    width: 90%;
     height: 100%;
+    background: #fff;
     padding: 0 5%;
+}
+
+.aside {
+    background: #fff;
+    border-radius: 10px;
+    height: 700px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .el-aside {
@@ -149,6 +158,8 @@ export default {
     padding: 10px;
     background: #fff;
     border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 
 .el-menu-item.is-active {

@@ -1,39 +1,41 @@
 <template>
   <div class="container">
     <login-bar></login-bar>
-    <div class="login">
-      <div class="header">
-        <h2>登录</h2>
-        <router-link to="/register">没有账号，立即注册</router-link>
-      </div>
-      <div class="form">
-        <div class="input">
-          <input type="text" placeholder="请输入手机号" v-model="mobile">
+    <main>
+      <div class="login">
+        <div class="header">
+          <h2>登录</h2>
+          <router-link to="/register">没有账号，立即注册</router-link>
         </div>
-        <div class="input">
-          <input type="password" placeholder="请输入密码" v-model="pwd">
-        </div>
-        <div>
-          <input type="checkbox" id="terms" v-model="agreeToTerms">
-          <label for="terms">我同意<router-link to="/article"
-              style="text-decoration: none; color:black">相关条款</router-link></label>
-          <button type="submit" :disabled="!agreeToTerms">登录</button>
-        </div>
-        <p>
-          <router-link to="">忘记密码？</router-link>
-        </p>
-        <div class="three-login">
-          <div class="item">
-            <img src="../assets/img/qq.png" alt="">
-            <span>QQ登录</span>
+        <div class="form">
+          <div class="input">
+            <input type="text" placeholder="请输入手机号" v-model="mobile">
           </div>
-          <div class="item">
-            <img src="../assets/img/wechat.png" alt="">
-            <span>微信登录</span>
+          <div class="input">
+            <input type="password" placeholder="请输入密码" v-model="pwd">
+          </div>
+          <div>
+            <input type="checkbox" id="terms" v-model="agreeToTerms">
+            <label for="terms">我同意<router-link to="/article"
+                style="text-decoration: none; color:black">相关条款</router-link></label>
+            <button type="submit" :disabled="!agreeToTerms">登录</button>
+          </div>
+          <p>
+            <router-link to="">忘记密码？</router-link>
+          </p>
+          <div class="three-login">
+            <div class="item">
+              <img src="../assets/img/qq.png" alt="">
+              <span>QQ登录</span>
+            </div>
+            <div class="item">
+              <img src="../assets/img/wechat.png" alt="">
+              <span>微信登录</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -52,9 +54,10 @@ export default {
 </script>
 
 <style scoped>
-.container{
+.container {
   background-color: #E9EEF3;
 }
+
 .login {
   position: fixed;
   left: 0;
@@ -67,7 +70,7 @@ export default {
   height: 500px;
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 99999;
+  z-index: 1000;
   /* border:#c30d23 1px solid; */
 }
 
@@ -154,13 +157,15 @@ button {
 button:disabled {
   background-color: #ccc;
 }
+
 button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 button:hover {
-    background-color: #e60000;
+  background-color: #e60000;
 }
+
 .three-login {
   padding: 0 10px;
   margin-top: 20px;
@@ -180,5 +185,4 @@ button:hover {
 
 .item span {
   display: block;
-}
-</style>
+}</style>

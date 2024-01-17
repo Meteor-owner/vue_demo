@@ -96,7 +96,7 @@ export default {
 
 .navbar.shadow {
   top: 0;
-  width: 90%;
+  width: 94%;
   border-radius: 10px;
   top: 5px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);

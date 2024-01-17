@@ -146,17 +146,19 @@ export default {
   font-weight: 600;
   position: absolute;
 }
+
 .search-button:disabled {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 .search-button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .search-button:hover {
-    background-color: #e60000;
+  background-color: #e60000;
 }
+
 .pic-nav {
   margin: 25px auto;
   width: 1100px;
@@ -218,10 +220,11 @@ export default {
   overflow: hidden;
 }
 
-.house-img img{
+.house-img img {
   width: 342px;
   height: 233px;
 }
+
 .price-img {
   position: absolute;
   top: 10px;
