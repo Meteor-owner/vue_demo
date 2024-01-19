@@ -2,7 +2,7 @@
   <div>
     <div class="big-img">
       <my-header></my-header>
-      <img class="img" src="../assets/img/home.jpg" alt="">
+      <img class="img" src="../../assets/img/home.jpg" alt="">
       <div class="up-search">
         <div class="search">
           <div class="search-content">
@@ -18,13 +18,13 @@
       <div class="four-nav">
         <div class="four-item">
           <router-link to='/houseList' style="text-decoration: none; color: black;">
-            <img src="../assets/img/store.png" alt="">
+            <img src="../../assets/img/store.png" alt="">
             <h3>查看房源</h3>
             <p>来看看好房子吧</p>
           </router-link>
         </div>
         <div class="four-item">
-          <img src="../assets/img/entrust.png" alt="">
+          <img src="../../assets/img/entrust.png" alt="">
           <h3>上传房源</h3>
           <p>把房子租出去吧</p>
         </div>
@@ -36,11 +36,11 @@
         <div class="house-list-item" v-for="item in rentHouse" :key="item.id">
           <div v-if="item.id < 7" class="house-img">
             <router-link :to="'/detail?id=' + item.id">
-              <img src="../assets/img/room.jpg" alt="">
+              <img src="../../assets/img/room.jpg" alt="">
             </router-link>
           </div>
           <div v-if="item.id < 7" class="price-img">
-            <img src="../assets/img/hot.png" alt="">
+            <img src="../../assets/img/hot.png" alt="">
           </div>
           <div class="house-introduction">
             <router-link :to="'/detail?id=' + item.id" style="text-decoration: none;">
@@ -58,8 +58,8 @@
 </template>
 
 <script>
-import MyHeader from '../components/HeaderBar.vue'
-import MyFooter from '../components/FooterBar.vue'
+import MyHeader from '../../components/HeaderBar.vue'
+import MyFooter from '../../components/FooterBar.vue'
 import axios from 'axios'
 
 export default {

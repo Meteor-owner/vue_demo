@@ -82,11 +82,8 @@
             <div class="show-data" v-for="(item, index) in HouseList" :key="index">
                 <div class="image">
                     <router-link :to="'/detail?id=' + item.id" @click.prevent="transportID(item.id)" target="_blank">
-                        <img src="../assets/img/room.jpg" alt="">
+                        <img src="../../assets/img/room.jpg" alt="">
                     </router-link>
-                    <!-- <div @click="transportID(item.id)">
-                        <img src="../assets/img/room.jpg" alt="">
-                    </div> -->
                 </div>
                 <div class="data-dec">
                     <h3>
@@ -123,8 +120,8 @@
 </template>
 
 <script>
-import FooterBar from '../components/FooterBar.vue'
-import MainBar from '../components/MainBar.vue'
+import FooterBar from '../../components/FooterBar.vue'
+import MainBar from '../../components/MainBar.vue'
 import axios from 'axios'
 import cookies from 'js-cookie'
 

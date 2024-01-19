@@ -79,8 +79,8 @@
 </template>
 
 <script>
-import FooterBar from '../components/FooterBar.vue'
-import MainBar from '../components/MainBar.vue'
+import FooterBar from '../../components/FooterBar.vue'
+import MainBar from '../../components/MainBar.vue'
 export default {
     components: { MainBar, FooterBar },
     data() {

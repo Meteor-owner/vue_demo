@@ -96,14 +96,14 @@
                     <div class="tips">
                         <div class="tips-icon">
                             <div class="icon">
-                                <img :src="houseList.has_bed === 'y' ? require('../assets/img/signal/bed2.png') : require('../assets/img/signal/bed1.png')"
+                                <img :src="houseList.has_bed === 'y' ? require('../../assets/img/signal/bed2.png') : require('../../assets/img/signal/bed1.png')"
                                     style="margin-top:5px">
                             </div>
                             <span :style="{ color: houseList.has_bed === 'y' ? '#9e8d71' : '#000' }">床</span>
                         </div>
                         <div class="tips-icon">
                             <div class="icon">
-                                <img :src="houseList.has_tv === 'y' ? require('../assets/img/signal/tv2.png') : require('../assets/img/signal/tv1.png')"
+                                <img :src="houseList.has_tv === 'y' ? require('../../assets/img/signal/tv2.png') : require('../../assets/img/signal/tv1.png')"
                                     style="margin-top:5px">
                             </div>
                             <span :style="{ color: houseList.has_tv === 'y' ? '#9e8d71' : '#000' }">电视</span>
@@ -111,20 +111,20 @@
                         <div class="tips-icon">
                             <div class="icon">
                                 <img
-                                    :src="houseList.has_fridge === 'y' ? require('../assets/img/signal/fr2.png') : require('../assets/img/signal/fr1.png')">
+                                    :src="houseList.has_fridge === 'y' ? require('../../assets/img/signal/fr2.png') : require('../../assets/img/signal/fr1.png')">
                             </div>
                             <span :style="{ color: houseList.has_fridge === 'y' ? '#9e8d71' : '#000' }">冰箱</span>
                         </div>
                         <div class="tips-icon">
                             <div class="icon">
                                 <img
-                                    :src="houseList.has_wm === 'y' ? require('../assets/img/signal/wm2.png') : require('../assets/img/signal/wm1.png')">
+                                    :src="houseList.has_wm === 'y' ? require('../../assets/img/signal/wm2.png') : require('../../assets/img/signal/wm1.png')">
                             </div>
                             <span :style="{ color: houseList.has_wm === 'y' ? '#9e8d71' : '#000' }">洗衣机</span>
                         </div>
                         <div class="tips-icon">
                             <div class="icon">
-                                <img :src="houseList.has_ac === 'y' ? require('../assets/img/signal/ac2.png') : require('../assets/img/signal/ac1.png')"
+                                <img :src="houseList.has_ac === 'y' ? require('../../assets/img/signal/ac2.png') : require('../../assets/img/signal/ac1.png')"
                                     style="margin-top:5px">
                             </div>
                             <span :style="{ color: houseList.has_ac === 'y' ? '#9e8d71' : '#000' }">空调</span>
@@ -132,13 +132,13 @@
                         <div class="tips-icon">
                             <div class="icon">
                                 <img
-                                    :src="houseList.has_wifi === 'y' ? require('../assets/img/signal/wifi2.png') : require('../assets/img/signal/wifi1.png')">
+                                    :src="houseList.has_wifi === 'y' ? require('../../assets/img/signal/wifi2.png') : require('../../assets/img/signal/wifi1.png')">
                             </div>
                             <span :style="{ color: houseList.has_wifi === 'y' ? '#9e8d71' : '#000' }">WIFI</span>
                         </div>
                         <!-- <div class="tips-icon">
                             <div class="icon">
-                                <img :src="houseList.has_furniture === 'y' ? require('../assets/img/signal/fu2.png') : require('../assets/img/signal/fu1.png')"
+                                <img :src="houseList.has_furniture === 'y' ? require('../../assets/img/signal/fu2.png') : require('../../assets/img/signal/fu1.png')"
                                     style="margin-top:5px">
                             </div>
                             <span :style="{ color: houseList.has_furniture === 'y' ? '#9e8d71' : '#000' }">家具</span>
@@ -146,13 +146,13 @@
                         <div class="tips-icon">
                             <div class="icon">
                                 <img
-                                    :src="houseList.has_gas === 'y' ? require('../assets/img/signal/gas2.png') : require('../assets/img/signal/gas1.png')">
+                                    :src="houseList.has_gas === 'y' ? require('../../assets/img/signal/gas2.png') : require('../../assets/img/signal/gas1.png')">
                             </div>
                             <span :style="{ color: houseList.has_gas === 'y' ? '#9e8d71' : '#000' }">天然气</span>
                         </div>
                         <div class="tips-icon">
                             <div class="icon">
-                                <img :src="houseList.has_heater === 'y' ? require('../assets/img/signal/heat2.png') : require('../assets/img/signal/heat1.png')"
+                                <img :src="houseList.has_heater === 'y' ? require('../../assets/img/signal/heat2.png') : require('../../assets/img/signal/heat1.png')"
                                     style="margin-top:10px">
                             </div>
                             <span :style="{ color: houseList.has_heater === 'y' ? '#9e8d71' : '#000' }">热水器</span>
@@ -160,14 +160,14 @@
                         <!-- <div class="tips-icon">
                             <div class="icon">
                                 <img
-                                    :src="houseList.has_elevator === 'y' ? require('../assets/img/signal/elv2.png') : require('../assets/img/signal/elv1.png')">
+                                    :src="houseList.has_elevator === 'y' ? require('../../assets/img/signal/elv2.png') : require('../../assets/img/signal/elv1.png')">
                             </div>
                             <span :style="{ color: houseList.has_elevator === 'y' ? '#9e8d71' : '#000' }">电梯</span>
                         </div> -->
                         <div class="tips-icon">
                             <div class="icon">
                                 <img
-                                    :src="houseList.near_metro === 'y' ? require('../assets/img/signal/metro2.png') : require('../assets/img/signal/metro1.png')">
+                                    :src="houseList.near_metro === 'y' ? require('../../assets/img/signal/metro2.png') : require('../../assets/img/signal/metro1.png')">
                             </div>
                             <span :style="{ color: houseList.near_metro === 'y' ? '#9e8d71' : '#000' }">地铁</span>
                         </div>
@@ -184,8 +184,8 @@
 </template>
 
 <script>
-import FooterBar from '../components/FooterBar.vue'
-import MainBar from '../components/MainBar.vue'
+import FooterBar from '../../components/FooterBar.vue'
+import MainBar from '../../components/MainBar.vue'
 import axios from 'axios'
 // import cookies from 'js-cookie'
 
@@ -196,7 +196,7 @@ export default {
             houseList: [],
             houseId: '',
             isActive: 1,
-            picList: [require('../assets/img/detail_img/room0.jpg'), require('../assets/img/detail_img/room1.jpg'), require('../assets/img/detail_img/room2.jpg'), require('../assets/img/detail_img/room3.jpg'), require('../assets/img/detail_img/room4.jpg'), require('../assets/img/detail_img/room5.jpg'), require('../assets/img/detail_img/room6.jpg'), require('../assets/img/detail_img/room7.jpg')],
+            picList: [require('../../assets/img/detail_img/room0.jpg'), require('../../assets/img/detail_img/room1.jpg'), require('../../assets/img/detail_img/room2.jpg'), require('../../assets/img/detail_img/room3.jpg'), require('../../assets/img/detail_img/room4.jpg'), require('../../assets/img/detail_img/room5.jpg'), require('../../assets/img/detail_img/room6.jpg'), require('../../assets/img/detail_img/room7.jpg')],
             cur_index: 0,
             position: 0,
             show_img: false,

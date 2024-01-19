@@ -1,7 +1,7 @@
 <template>
     <div class="container-follow">
         <div class="follow-group">
-            <h2>浏览记录</h2>
+            <h2>我的发布</h2>
             <el-divider></el-divider>
             <el-container>
                 <el-main>
@@ -9,7 +9,7 @@
                         <div class="house-list-item" v-for="item in rentHouse" :key="item.id">
                             <div class="house-img">
                                 <router-link :to="'/detail?id=' + item.id">
-                                    <img src="../assets/img/room.jpg" alt="">
+                                    <img src="../../assets/img/room.jpg" alt="">
                                 </router-link>
                             </div>
                             <div class="house-introduction">

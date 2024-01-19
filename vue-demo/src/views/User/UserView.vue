@@ -8,7 +8,7 @@
                         <div class="aside">
                             <div class="head-img">
                                 <el-avatar :size="120" fit="scale-down" @error="errorHandler">
-                                    <el-image :src="require('../assets/img/head-img.jpg')"></el-image>
+                                    <el-image :src="require('../../assets/img/head-img.jpg')"></el-image>
                                 </el-avatar>
                             </div>
                             <div class="username">
@@ -44,8 +44,8 @@
 </template>
 
 <script>
-import FooterBar from '../components/FooterBar.vue'
-import MainBar from "../components/MainBar.vue"
+import FooterBar from '../../components/FooterBar.vue'
+import MainBar from "../../components/MainBar.vue"
 import InfoView from './InfoView.vue'
 import FollowView from './FollowView.vue'
 import PublishView from './PublishView.vue'

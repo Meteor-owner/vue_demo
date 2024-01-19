@@ -25,11 +25,11 @@
           </p>
           <div class="three-login">
             <div class="item">
-              <img src="../assets/img/qq.png" alt="">
+              <img src="../../assets/img/qq.png" alt="">
               <span>QQ登录</span>
             </div>
             <div class="item">
-              <img src="../assets/img/wechat.png" alt="">
+              <img src="../../assets/img/wechat.png" alt="">
               <span>微信登录</span>
             </div>
           </div>
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import LoginBar from '../components/LoginBar.vue'
+import LoginBar from '../../components/LoginBar.vue'
 export default {
   components: { LoginBar },
   data() {

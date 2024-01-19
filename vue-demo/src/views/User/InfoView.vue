@@ -91,7 +91,7 @@ export default {
       });
     },
     getPath(img) {
-      return require('../assets/img/' + img);
+      return require('../../assets/img/' + img);
     },
     tips() {
       this.dialogFormVisible=false;

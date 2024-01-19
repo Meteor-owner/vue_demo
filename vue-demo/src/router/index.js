@@ -11,44 +11,44 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('../views/HomeView.vue')
+    component: () => import('../views/User/HomeView.vue')
   },
 
   {
     path: '/register',
     name: 'register',
-    component: () => import('../views/RegisterView.vue')
+    component: () => import('../views/User/RegisterView.vue')
 
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import('../views/LoginView.vue')
+    component: () => import('../views/User/LoginView.vue')
   },
   {
     path: '/houseList',
     name: 'houseList',
-    component: () => import('../views/HouseView.vue')
+    component: () => import('../views/User/HouseView.vue')
   },
   {
     path: '/detail',
     name: 'detail',
-    component: () => import('../views/DetailView.vue')
+    component: () => import('../views/User/DetailView.vue')
   },
   {
     path: '/userPage',
     name: 'userPage',
-    component: () => import('../views/UserView.vue'),
+    component: () => import('../views/User/UserView.vue'),
   },
   {
-    path: '/attention',
-    name: 'attention',
-    component: () => import('../views/InfoView.vue')
+    path: '/offer',
+    name: 'offer',
+    component: () => import('../views/User/UploadView.vue'),
   },
   {
-    path:'/offer',
-    name:'offer',
-    component: () => import('../views/UploadView.vue'),
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/Admin/AdminView.vue')
   }
 ]
 
