@@ -33,7 +33,6 @@
                     <el-main>
                         <div class="content">
                             <component :is="curComponent"></component>
-                            <!-- <info-view></info-view> -->
                         </div>
                     </el-main>
                 </el-container>
@@ -101,7 +100,6 @@ export default {
     padding: 0 10%;
     margin: 0.7% 10%;
     width: 60%;
-    /* border: #9e9e9e 1px solid; */
     height: auto;
     align-items: center;
 }
