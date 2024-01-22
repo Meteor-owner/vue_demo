@@ -69,7 +69,7 @@ export default {
     },
     methods: {
         selectComponent(index) {
-            console.log(index);
+            // console.log(index);
             if (index === '1-1') {
                 this.curComponent = 'FollowView';
             } else if (index === '1-2') {
@@ -81,7 +81,7 @@ export default {
             } else if (index === '2-1') {
                 this.curComponent = 'InfoView';
             }
-            console.log(this.curComponent);
+            // console.log(this.curComponent);
 
         },
         errorHandler() {

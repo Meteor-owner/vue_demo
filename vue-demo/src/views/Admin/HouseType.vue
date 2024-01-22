@@ -16,33 +16,74 @@
                 <table class="basic-table" border="1">
                     <thead>
                         <tr>
-                            <th width="180">编号</th>
-                            <th width="180">城市</th>
+                            <th width="140">编号</th>
+                            <th width="140">城市</th>
                             <th width="140">小区</th>
-                            <th width="180">租金（元/月）</th>
-                            <th width="180">操作</th>
+                            <th width="160">房屋类型</th>
+                            <th width="140">电梯</th>
+                            <th width="140">空调</th>
+                            <th width="140">热水器</th>
+                            <th width="140">床</th>
+                            <th width="140">电视</th>
+                            <th width="140">冰箱</th>
+                            <th width="140">洗衣机</th>
+                            <th width="140">WIFI</th>
+                            <th width="140">天然气</th>
+                            <th width="140">近地铁</th>
+                            <!-- <th width="140">家具</th> -->
+                            <th width="300">操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="prices in priceList" :key="prices.id">
-                            <td>{{ prices.id }}</td>
-                            <td>{{ prices.location }}</td>
-                            <td>{{ prices.village }}</td>
-                            <td>{{ prices.price }}</td>
+                        <tr v-for="types in priceList" :key="types.id">
+                            <td>{{ types.id }}</td>
+                            <td>{{ types.location }}</td>
+                            <td>{{ types.village }}</td>
+                            <td>{{ types.room_type }}</td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_elevator === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_ac === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_heater === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_bed === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_tv === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_fridge === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_wm === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_wifi === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.has_gas === 'y'"></i>
+                            </td>
+                            <td>
+                                <i class="el-icon-check" v-if="types.near_metro === 'y'"></i>
+                            </td>
                             <td>
                                 <button type="button" class="btn btn-primary">编辑</button>
-                                <button type="button" class="btn btn-danger">删除</button>
+                                <button type="button" class="btn btn-danger">下架</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="page">
                     <el-pagination layout="prev, pager, next, jumper" @current-change="handleCurrentChange"
-                    :current-page="pagination.page_num" :page-size="pagination.page_size" :total="count"
-                    :background="isBackground">
-                </el-pagination>
+                        :current-page="pagination.page_num" :page-size="pagination.page_size" :total="count"
+                        :background="isBackground">
+                    </el-pagination>
                 </div>
-                
+
             </div>
         </div>
 
@@ -112,6 +153,7 @@ export default {
 .user-box {
     width: 80%;
     margin: 2% 10%;
+    text-align: center;
 }
 
 .el-button--primary {
@@ -134,7 +176,6 @@ export default {
 
 .dataTable {
     width: 100%;
-    text-align: center;
 }
 
 .basic-table {
@@ -164,7 +205,7 @@ export default {
 }
 
 .btn {
-    padding: 5px 15px;
+    padding: 5px 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -203,7 +244,8 @@ export default {
 .btn:not(:last-child) {
     margin-right: 8px;
 }
-.page{
+
+.page {
     margin-top: 20px;
 }
 </style>

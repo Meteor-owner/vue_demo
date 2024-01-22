@@ -18,20 +18,34 @@
                         <tr>
                             <th width="180">编号</th>
                             <th width="180">城市</th>
-                            <th width="140">小区</th>
-                            <th width="180">租金（元/月）</th>
+                            <th width="180">小区</th>
+                            <th width="180">装修情况</th>
+                            <th width="180">朝向</th>
+                            <th width="240">楼层</th>
+                            <th width="180">建造时间</th>
+                            <th width="180">发布时间</th>
+                            <th width="180">更新时间</th>
+                            <th width="180">租赁方式</th>
+                            <th width="180">关注人数</th>
                             <th width="180">操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="prices in priceList" :key="prices.id">
-                            <td>{{ prices.id }}</td>
-                            <td>{{ prices.location }}</td>
-                            <td>{{ prices.village }}</td>
-                            <td>{{ prices.price }}</td>
+                        <tr v-for="info in houseInfo" :key="info.id">
+                            <td>{{ info.id }}</td>
+                            <td>{{ info.location }}</td>
+                            <td>{{ info.village }}</td>
+                            <td>{{ info.decoration }}</td>
+                            <td>{{ info.direction }}</td>
+                            <td>{{ info.cur_floor }} / {{ info.tol_floor }}层</td>
+                            <td>{{ info.build_year }}</td>
+                            <td>{{ info.publish_year }}-{{ info.publish_month > 10 ? info.publish_month : `0${info.publish_month}` }}</td>
+                            <td>{{ info.update_date }}</td>
+                            <td>{{ info.rental_type }}</td>
+                            <td>{{ info.follow_num }}</td>
                             <td>
-                                <button type="button" class="btn btn-primary">编辑</button>
-                                <button type="button" class="btn btn-danger">删除</button>
+                                <!-- <button type="button" class="btn btn-primary">编辑</button> -->
+                                <button type="button" class="btn btn-danger">下架</button>
                             </td>
                         </tr>
                     </tbody>
@@ -54,7 +68,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            priceList: [],
+            houseInfo: [],
             discounts: {
                 id: "",
                 discount: "",
@@ -79,11 +93,11 @@ export default {
                 const end = start + this.pagination.page_size;
                 const show_data = fullData.slice(start, end);
 
-                this.priceList = [];
+                this.houseInfo = [];
                 for (let item of show_data) {
-                    this.priceList.push(item);
+                    this.houseInfo.push(item);
                 }
-                // console.log(this.priceList);
+                // console.log(this.houseInfo);
             }).catch((err) => {
                 console.error('Error fetching the users:', err);
             });

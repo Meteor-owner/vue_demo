@@ -56,11 +56,16 @@
 <script>
 import UserManage from './UserManage.vue'
 import PriceManage from './PriceManage.vue'
+import HouseInfo from './HouseInfo.vue'
+import HouseType from './HouseType.vue'
 
 export default {
     components: {
         UserManage,
         PriceManage,
+        HouseInfo,
+        HouseType,
+
     },
     data() {
         return {
@@ -70,7 +75,7 @@ export default {
     },
     methods: {
         selectComponent(index) {
-            console.log(index);
+            // console.log(index);
             if (index === '1-1') {
                 this.curComponent = 'UserManage';
             } else if (index === '1-2') {
@@ -86,7 +91,7 @@ export default {
             } else if (index === '3-2') {
                 this.curComponent = 'PriceAnalyze';
             }
-            console.log(this.curComponent);
+            // console.log(this.curComponent);
 
         },
 

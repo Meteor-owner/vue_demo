@@ -85,7 +85,7 @@ export default {
                 for (let item of show_data) {
                     this.userList.push(item);
                 }
-                console.log(this.userList);
+                // console.log(this.userList);
             }).catch((err) => {
                 console.error('Error fetching the users:', err);
             });

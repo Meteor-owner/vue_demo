@@ -255,7 +255,7 @@ export default {
                 this.cur_index = 0;
             }
             const container = this.$refs.imgContainer;
-            console.log(container.scrollLeft);
+            // console.log(container.scrollLeft);
             const imgWidth = 125;
             this.position += imgWidth;
             if (this.position >= (this.picList.length * imgWidth)) {

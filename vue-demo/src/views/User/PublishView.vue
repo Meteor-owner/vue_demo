@@ -62,12 +62,12 @@ export default {
                 const start = (this.pagination.page_num - 1) * this.pagination.page_size;
                 const end = start + this.pagination.page_size;
                 const show_data = followList.slice(start, end);
-                console.log('count: ',this.count);
+                // console.log('count: ',this.count);
                 this.rentHouse = [];
                 for (let item of show_data) {
                     this.rentHouse.push(item);
                 }
-                console.log("rental: ", this.rentHouse);
+                // console.log("rental: ", this.rentHouse);
             });
         },
         handleCurrentChange(newPage) {

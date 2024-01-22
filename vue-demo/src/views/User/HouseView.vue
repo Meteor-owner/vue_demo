@@ -95,7 +95,7 @@
                     </p>
                     <p>{{ item.cur_floor }}/{{ item.tol_floor }}层 <span>|</span> {{ item.decoration }} <span>|</span> {{
                         item.build_year }}年建</p>
-                    <p>{{ item.follow_num }}人关注 <span>|</span> {{ item.publish_date }}发布</p>
+                    <p>{{ item.follow_num }}人关注 <span>|</span> {{ item.publish_year }}年{{ item.publish_month }}月发布</p>
                 </div>
                 <div class="data-price">
                     <h3><span>{{ item.price }}</span>元/月</h3>
@@ -126,7 +126,7 @@ import axios from 'axios'
 import cookies from 'js-cookie'
 
 export default {
-    inject:['houseId'],
+    inject: ['houseId'],
     components: { MainBar, FooterBar },
     data() {
         return {
@@ -418,10 +418,12 @@ export default {
     float: left;
     margin-right: 5px;
 }
-.image img{
+
+.image img {
     height: 220px;
-    width:auto;
+    width: auto;
 }
+
 .data-dec {
     margin-left: 10px;
     padding-left: 10px;
