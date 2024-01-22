@@ -1,15 +1,15 @@
 <template>
     <div class="user-container">
         <div class="user-box">
-            <el-form :inline="true" :model="userInfo" class="demo-form-inline">
-                <el-form-item label="手机号">
-                    <el-input v-model="userInfo.phone" placeholder="请输入手机号"></el-input>
+            <el-form :inline="true" :model="houseReview" class="demo-form-inline">
+                <el-form-item label="编号">
+                    <el-input v-model="houseReview.id" placeholder="请输入编号"></el-input>
                 </el-form-item>
-                <el-form-item label="邮箱">
-                    <el-input v-model="userInfo.email" placeholder="请输入邮箱"></el-input>
+                <el-form-item label="所在城市">
+                    <el-input v-model="houseReview.city" placeholder="请输入城市"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" @click="onSubmit">查 询</el-button>
+                    <el-button type="primary" @click="onSubmit">查询</el-button>
                     <el-button type="primary">更 新</el-button>
                 </el-form-item>
             </el-form>
@@ -17,23 +17,19 @@
                 <table class="basic-table" border="1">
                     <thead>
                         <tr>
-                            <th width="180">昵称</th>
-                            <th width="180">姓名</th>
-                            <th width="140">性别</th>
-                            <th width="180">手机号</th>
-                            <th width="180">邮箱</th>
+                            <th width="140">编号</th>
+                            <th width="140">城市</th>
+                            <th width="140">小区</th>
                             <th width="180">操作</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="user in userList" :key="user.id">
-                            <td>{{ user.username }}</td>
-                            <td>{{ user.name }}</td>
-                            <td>{{ user.gender === 'male' ? '男' : '女' }}</td>
-                            <td>{{ user.phone }}</td>
-                            <td>{{ user.email }}</td>
+                        <tr v-for="prices in houseList" :key="prices.id">
+                            <td>{{ prices.id }}</td>
+                            <td>{{ prices.location }}</td>
+                            <td>{{ prices.village }}</td>
                             <td>
-                                <button type="button" class="btn btn-primary" @click="dialogVisible = true">编 辑</button>
+                                <button type="button" class="btn btn-primary" @click="dialogVisible = true">详 细 信 息</button>
                                 <button type="button" class="btn btn-danger">删 除</button>
                             </td>
                         </tr>
@@ -45,20 +41,16 @@
                         :background="isBackground">
                     </el-pagination>
                 </div>
-                <el-dialog title="个人信息" :visible.sync="dialogVisible" width="30%">
-                    <el-form ref="form" :model="userAlter" label-width="80px">
-                        <el-form-item label="昵称">
-                            <el-input v-model="userAlter.username"></el-input>
-                        </el-form-item>
-                        <el-form-item label="姓名">
-                            <el-input v-model="userAlter.name"></el-input>
-                        </el-form-item>
-                    </el-form>
-                    <span slot="footer" class="dialog-footer">
-                        <el-button @click="dialogVisible = false">取 消</el-button>
-                        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
-                    </span>
-                </el-dialog>
+                <div class="dialog">
+                    <el-dialog :visible.sync="dialogVisible" width="60%">
+                        <component :is="curComponent"></component>
+                        <span slot="footer" class="dialog-footer">
+                            <el-button @click="dialogVisible = false">取 消</el-button>
+                            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                        </span>
+                    </el-dialog>
+                </div>
+                
             </div>
         </div>
 
@@ -67,13 +59,14 @@
 
 <script>
 import axios from 'axios';
+import DetailView from '../Admin/DetailView.vue';
 export default {
     data() {
         return {
-            userList: [],
-            userInfo: {
-                phone: "",
-                email: "",
+            houseList: [],
+            houseReview: {
+                id: "",
+                city: "",
             },
             pagination: {
                 r_id: "",
@@ -85,26 +78,23 @@ export default {
             count: 0,
             isBackground: true,
             dialogVisible: false,
-            userAlter:{
-                username:'',
-                name:'',
-            }
+            curComponent:DetailView
         }
     },
     methods: {
         getData() {
-            axios.get('https://yapi.pro/mock/220305/userList').then((result) => {
+            axios.get('https://yapi.pro/mock/220305/houses').then((result) => {
                 this.count = result.data.data.length;
                 const fullData = result.data.data;
                 const start = (this.pagination.page_num - 1) * this.pagination.page_size;
                 const end = start + this.pagination.page_size;
                 const show_data = fullData.slice(start, end);
 
-                this.userList = [];
+                this.houseList = [];
                 for (let item of show_data) {
-                    this.userList.push(item);
+                    this.houseList.push(item);
                 }
-                // console.log(this.userList);
+                console.log(this.houseList);
             }).catch((err) => {
                 console.error('Error fetching the users:', err);
             });
@@ -232,13 +222,10 @@ export default {
 .el-form-item {
     margin-right: 20px;
 }
+
 </style>
 
 <style lang="scss">
-.el-input__inner:focus {
-    border-color: #9e8d71;
-}
-
 .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #9e8d71;
     color: #fff;
@@ -255,5 +242,20 @@ export default {
 .el-pagination.is-background .el-pager li:not(.disabled).active:hover {
     background-color: #9e8d71;
     color: #FFF;
+}
+.dialog .el-dialog{
+    margin-top: 2% !important;
+}
+.dialog .el-dialog__body{
+    padding: 5px 20px;
+}
+.dialog .el-dialog__header {
+    padding: 0;
+}
+.el-button:focus,
+.el-button:hover {
+    color: #9e8d71;
+    border-color: #9e8d71;
+    background-color: #FFF;
 }
 </style>

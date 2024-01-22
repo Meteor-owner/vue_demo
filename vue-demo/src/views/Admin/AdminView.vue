@@ -58,6 +58,7 @@ import UserManage from './UserManage.vue'
 import PriceManage from './PriceManage.vue'
 import HouseInfo from './HouseInfo.vue'
 import HouseType from './HouseType.vue'
+import HouseReview from './HouseReview.vue'
 
 export default {
     components: {
@@ -65,7 +66,7 @@ export default {
         PriceManage,
         HouseInfo,
         HouseType,
-
+        HouseReview,
     },
     data() {
         return {

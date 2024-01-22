@@ -86,11 +86,12 @@ export default {
   padding: 0 2rem;
   height: 50px;
   transition: all 0.3s ease;
-  border-top: #9e8d71 1px solid;
+  border: #9e8d71 1px solid;
+  border-radius: 5px;
   left: 0;
   right: 0;
   margin: auto;
-  width: 95.7%;
+  width: 95.2%;
   z-index: 1000;
 }
 

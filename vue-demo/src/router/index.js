@@ -49,7 +49,7 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component: () => import('../views/Admin/AdminView.vue')
-  }
+  },
 ]
 
 const router = new VueRouter({

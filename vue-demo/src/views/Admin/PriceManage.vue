@@ -1,15 +1,19 @@
 <template>
     <div class="user-container">
         <div class="user-box">
-            <el-form :inline="true" :model="searchForm" class="demo-form-inline">
+            <el-form :inline="true" :model="housePrice" class="demo-form-inline">
                 <el-form-item label="编号">
-                    <el-input v-model="discounts.id" placeholder="请输入编号"></el-input>
+                    <el-input v-model="housePrice.id" placeholder="请输入编号"></el-input>
                 </el-form-item>
-                <el-form-item label="折扣">
-                    <el-input v-model="discounts.discount" placeholder="请输入折扣"></el-input>
+                <el-form-item label="所在城市">
+                    <el-input v-model="housePrice.city" placeholder="请输入城市"></el-input>
+                </el-form-item>
+                <el-form-item label="所在小区">
+                    <el-input v-model="housePrice.village" placeholder="请输入小区"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" @click="onSubmit">打折</el-button>
+                    <el-button type="primary" @click="onSubmit">查 询</el-button>
+                    <el-button type="primary">更 新</el-button>
                 </el-form-item>
             </el-form>
             <div class="dataTable">
@@ -30,19 +34,32 @@
                             <td>{{ prices.village }}</td>
                             <td>{{ prices.price }}</td>
                             <td>
-                                <button type="button" class="btn btn-primary">编辑</button>
-                                <button type="button" class="btn btn-danger">删除</button>
+                                <button type="button" class="btn btn-primary" @click="dialogVisible = true">编 辑</button>
+                                <button type="button" class="btn btn-danger">删 除</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="page">
                     <el-pagination layout="prev, pager, next, jumper" @current-change="handleCurrentChange"
-                    :current-page="pagination.page_num" :page-size="pagination.page_size" :total="count"
-                    :background="isBackground">
-                </el-pagination>
+                        :current-page="pagination.page_num" :page-size="pagination.page_size" :total="count"
+                        :background="isBackground">
+                    </el-pagination>
                 </div>
-                
+                <el-dialog title="个人信息" :visible.sync="dialogVisible" width="30%">
+                    <el-form ref="form" :model="priceAlter" label-width="90px">
+                        <el-form-item label="房源编号">
+                            <el-input v-model="priceAlter.id"></el-input>
+                        </el-form-item>
+                        <el-form-item label="修改后价格">
+                            <el-input v-model="priceAlter.price_after"></el-input>
+                        </el-form-item>
+                    </el-form>
+                    <span slot="footer" class="dialog-footer">
+                        <el-button @click="dialogVisible = false">取 消</el-button>
+                        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                    </span>
+                </el-dialog>
             </div>
         </div>
 
@@ -55,9 +72,10 @@ export default {
     data() {
         return {
             priceList: [],
-            discounts: {
+            housePrice: {
                 id: "",
-                discount: "",
+                city: "",
+                village: "",
             },
             pagination: {
                 r_id: "",
@@ -67,7 +85,12 @@ export default {
                 // userid: cookies.get("userid")
             },
             count: 0,
-            isBackground: true
+            isBackground: true,
+            dialogVisible:false,
+            priceAlter:{
+                id:'',
+                price_after:''
+            }
         }
     },
     methods: {
@@ -203,12 +226,21 @@ export default {
 .btn:not(:last-child) {
     margin-right: 8px;
 }
-.page{
+
+.page {
     margin-top: 20px;
+}
+
+.el-form-item {
+    margin-right: 20px;
 }
 </style>
 
 <style lang="scss">
+.el-input__inner:focus {
+    border-color: #9e8d71;
+}
+
 .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #9e8d71;
     color: #fff;

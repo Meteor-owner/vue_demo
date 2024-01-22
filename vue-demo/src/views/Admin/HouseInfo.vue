@@ -1,16 +1,22 @@
 <template>
     <div class="user-container">
         <div class="user-box">
-            <el-form :inline="true" :model="searchForm" class="demo-form-inline">
-                <el-form-item label="编号">
-                    <el-input v-model="discounts.id" placeholder="请输入编号"></el-input>
+            <el-form :inline="true" :model="houseList" class="demo-form-inline">
+                <el-form-item label="房源编号">
+                    <el-input v-model="houseList.id" placeholder="请输入编号"></el-input>
                 </el-form-item>
-                <el-form-item label="折扣">
-                    <el-input v-model="discounts.discount" placeholder="请输入折扣"></el-input>
+                <el-form-item label="所在城市">
+                    <el-input v-model="houseList.city" placeholder="请输入城市"></el-input>
+                </el-form-item>
+                <el-form-item label="发布日期">
+                    <el-date-picker v-model="houseList.publish_date" type="month" placeholder="选择发布日期">
+                    </el-date-picker>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" @click="onSubmit">打折</el-button>
+                    <el-button type="primary" @click="onSubmit">查 询</el-button>
+                    <el-button type="primary">更 新</el-button>
                 </el-form-item>
+
             </el-form>
             <div class="dataTable">
                 <table class="basic-table" border="1">
@@ -39,24 +45,24 @@
                             <td>{{ info.direction }}</td>
                             <td>{{ info.cur_floor }} / {{ info.tol_floor }}层</td>
                             <td>{{ info.build_year }}</td>
-                            <td>{{ info.publish_year }}-{{ info.publish_month > 10 ? info.publish_month : `0${info.publish_month}` }}</td>
+                            <td>{{ info.publish_year }}-{{ info.publish_month > 10 ? info.publish_month :
+                                `0${info.publish_month}` }}</td>
                             <td>{{ info.update_date }}</td>
                             <td>{{ info.rental_type }}</td>
                             <td>{{ info.follow_num }}</td>
                             <td>
                                 <!-- <button type="button" class="btn btn-primary">编辑</button> -->
-                                <button type="button" class="btn btn-danger">下架</button>
+                                <button type="button" class="btn btn-danger">下 架</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="page">
                     <el-pagination layout="prev, pager, next, jumper" @current-change="handleCurrentChange"
-                    :current-page="pagination.page_num" :page-size="pagination.page_size" :total="count"
-                    :background="isBackground">
-                </el-pagination>
+                        :current-page="pagination.page_num" :page-size="pagination.page_size" :total="count"
+                        :background="isBackground">
+                    </el-pagination>
                 </div>
-                
             </div>
         </div>
 
@@ -69,9 +75,10 @@ export default {
     data() {
         return {
             houseInfo: [],
-            discounts: {
+            houseList: {
                 id: "",
-                discount: "",
+                city: "",
+                publish_date: '',
             },
             pagination: {
                 r_id: "",
@@ -217,12 +224,30 @@ export default {
 .btn:not(:last-child) {
     margin-right: 8px;
 }
-.page{
+
+.page {
     margin-top: 20px;
+}
+
+.el-form-item {
+    margin-right: 20px;
 }
 </style>
 
 <style lang="scss">
+.el-input__inner:focus {
+    border-color: #9e8d71;
+}
+
+.el-date-picker__header-label:hover,
+.el-picker-panel__icon-btn:hover,
+.el-picker-panel__icon-btn:hover,
+.el-month-table td.today .cell,
+.el-month-table td .cell:hover,
+.el-month-table td.current:not(.disabled) .cell {
+    color: #9e7d81;
+}
+
 .el-pagination.is-background .el-pager li:not(.disabled).active {
     background-color: #9e8d71;
     color: #fff;
