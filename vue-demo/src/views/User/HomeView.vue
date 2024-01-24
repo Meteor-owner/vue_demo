@@ -24,9 +24,11 @@
           </router-link>
         </div>
         <div class="four-item">
-          <img src="../../assets/img/entrust.png" alt="">
-          <h3>上传房源</h3>
-          <p>把房子租出去吧</p>
+          <router-link to='/offer' style="text-decoration: none; color: black;">
+            <img src="../../assets/img/entrust.png" alt="">
+            <h3>上传房源</h3>
+            <p>把房子租出去吧</p>
+          </router-link>
         </div>
       </div>
     </div>

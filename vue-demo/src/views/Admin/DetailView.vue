@@ -361,9 +361,11 @@ signal img {
 .detail-info span {
     color: #333;
 }
-.special{
+
+.special {
     border: #333 1px solid;
 }
+
 .special p {
     margin-bottom: 20px;
     font-size: 14px;
@@ -382,7 +384,8 @@ signal img {
     border-radius: 4px;
     background: #5f1985;
 }
-.special-detail{
+
+.special-detail {
     border: #333 1px solid;
 }
 </style>

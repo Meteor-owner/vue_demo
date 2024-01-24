@@ -9,6 +9,11 @@
                     <el-breadcrumb-item>{{ houseList.village }}</el-breadcrumb-item>
                 </el-breadcrumb>
             </div>
+            <!-- <el-carousel trigger="click" height="150px">
+                <el-carousel-item v-for="(image, index) in picList" :key="index">
+                    <img :src="image" alt="">
+                </el-carousel-item>
+            </el-carousel> -->
             <div class="detail">
                 <div class="base-info">
                     <h1>{{ houseList.location }}市{{ houseList.village }}</h1>

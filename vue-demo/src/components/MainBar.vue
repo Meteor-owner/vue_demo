@@ -22,7 +22,7 @@
             </div>
             <div class="login">
                 <span>
-                    <router-link to="" v-if="username">{{ username }}</router-link>
+                    <router-link to="" v-if="username">欢迎，{{ username }}</router-link>
                     <router-link to="/login" v-else>登录</router-link>
                 </span>
                 <span class="line">|</span>
@@ -135,6 +135,7 @@ ul .active {
     font-family: 微软雅黑;
     font-size: 16px;
     color: #000;
+    font-family: fzyihei-m20s;
 }
 
 .login a:hover {

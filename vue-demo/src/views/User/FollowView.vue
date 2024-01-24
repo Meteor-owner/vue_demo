@@ -5,26 +5,35 @@
             <el-divider></el-divider>
             <el-container>
                 <el-main>
-                    <div class="house-list">
-                        <div class="house-list-item" v-for="item in rentHouse" :key="item.id">
-                            <div class="house-img">
-                                <router-link :to="'/detail?id=' + item.id">
-                                    <img src="../../assets/img/room.jpg" alt="">
-                                </router-link>
-                            </div>
-                            <div class="house-introduction">
-                                <router-link :to="'/detail?id=' + item.id" style="text-decoration: none;">
-                                    <h3 class="house-title">{{ item.location }}</h3>
-                                </router-link>
-                                <p class="house-info">{{ item.bedroom }}室 {{ item.livingroom }}厅 {{
-                                    item.wc }}卫
-                                    {{ item.area }}㎡</p>
-                            </div>
-                        </div>
+                    <div class="dataTable">
+                        <table class="basic-table">
+                            <thead>
+                                <tr>
+                                    <th width="50">编号</th>
+                                    <th width="100">房源</th>
+                                    <th width="100">城市</th>
+                                    <th width="100">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in rentHouse" :key="item.id">
+                                    <td>{{ item.id }}</td>
+                                    <td>
+                                        <router-link :to="'/detail?id=' + item.id">
+                                            <img src="../../assets/img/room.jpg" alt="">
+                                        </router-link>
+                                    </td>
+                                    <td>{{ item.location }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">取 消 关 注</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="pages">
-                        <el-pagination layout="prev, pager, next, jumper" @current-change="handleCurrentChange" :total="count"
-                            :current-page="pagination.page_num" :page-size="pagination.page_size" 
+                        <el-pagination layout="prev, pager, next, jumper" @current-change="handleCurrentChange"
+                            :total="count" :current-page="pagination.page_num" :page-size="pagination.page_size"
                             :background="isBackground">
                         </el-pagination>
                     </div>
@@ -93,56 +102,91 @@ export default {
 
 .el-container {
     width: 100%;
-    padding-left: 8%;
+    padding-left: 0;
 }
 
-.house-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: center;
+.el-main {
+    margin: auto;
+    padding: 10px;
+}
+
+.dataTable {
     width: 100%;
-    margin-top: -2%;
-}
-
-.house-list-item {
-    position: relative;
-    width: 40%;
-    height: 40%;
-    margin: 0 5%;
-    /* border: red 1px solid; */
     text-align: center;
+    margin: auto;
 }
 
-.house-img {
-    position: relative;
+.basic-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.basic-table thead {
+    background-color: #f5f7fa;
+}
+
+.basic-table th,
+.basic-table td {
+    border: 1px solid #ebeef5;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    vertical-align: middle;
+    border: 0;
+}
+
+.basic-table tr:hover {
+    background-color: #ecf5ff;
+}
+
+.basic-table th {
+    color: #303133;
+}
+
+.basic-table img {
+    height: auto;
     width: 80%;
-    height: auto;
+}
+
+.btn {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    perspective: 1000px;
-    /* overflow: hidden; */
 }
 
-.house-img img {
-    width: 100%;
-    height: auto;
+.btn-primary {
+    background-color: #9e7d81;
+    color: white;
 }
 
-.house-title {
-    margin: 2px 0 4px 0;
-    font-size: 16px;
-    color: #333;
+.btn-primary:hover {
+    background-color: #a38185;
+    border-color: #a38185;
 }
 
-.house-info {
-    font-size: 14px;
-    margin-top: -1px;
+.btn-primary:active {
+    background-color: #9c7b7f;
+    border-color: #9c7b7f;
 }
 
-.house-introduction {
-    width: 50%;
-    text-align: center;
-    margin-left: 15%;
+.btn-danger {
+    background-color: #f56c6c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #e66767;
+    border-color: #e66767;
+}
+
+.btn-danger:active {
+    background-color: #e76e6e;
+    border-color: #e76e6e;
+}
+
+.btn:not(:last-child) {
+    margin-right: 8px;
 }
 </style>
 

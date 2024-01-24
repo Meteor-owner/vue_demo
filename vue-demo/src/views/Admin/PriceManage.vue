@@ -22,7 +22,7 @@
                         <tr>
                             <th width="180">编号</th>
                             <th width="180">城市</th>
-                            <th width="140">小区</th>
+                            <th width="180">小区</th>
                             <th width="180">租金（元/月）</th>
                             <th width="180">操作</th>
                         </tr>
@@ -35,7 +35,7 @@
                             <td>{{ prices.price }}</td>
                             <td>
                                 <button type="button" class="btn btn-primary" @click="dialogVisible = true">编 辑</button>
-                                <button type="button" class="btn btn-danger">删 除</button>
+                                <!-- <button type="button" class="btn btn-danger">删 除</button> -->
                             </td>
                         </tr>
                     </tbody>

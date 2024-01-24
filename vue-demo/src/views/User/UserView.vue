@@ -93,7 +93,8 @@ export default {
 
 <style scoped>
 .container {
-    background: #f7f8fc;
+    background-color: #f7f8fc;
+    /* height: 700px; */
 }
 
 .main {
@@ -102,6 +103,8 @@ export default {
     width: 60%;
     height: auto;
     align-items: center;
+    background: #f7f8fc;
+    margin-bottom: 1%;
 }
 
 .head-img {
